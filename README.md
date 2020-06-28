@@ -35,14 +35,13 @@ $ iex -S mix
 
 // example of create daily report summary
 iex> todo_list =
-		Todo.List.new([
-			%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Movie"},
-			%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Dentist"},
-			%{date: ~D[2020-05-22], start_time: ~T[11:00:00], end_time: ~T[12:00:00], title: "Shopping"}
-		])
+	Todo.List.new([
+		%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Movie"},
+		%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Dentist"},
+		%{date: ~D[2020-05-22], start_time: ~T[11:00:00], end_time: ~T[12:00:00], title: "Shopping"}
+	])
 
 iex> Todo.List.daily_summary(todo_list, ~D[2020-05-22])
-
  Daily Summary for date : 2020-05-22
 
  # Shopping     11:00:00 - 12:00:00     ( 1.0 hour(s) )
@@ -55,17 +54,16 @@ iex> Todo.List.daily_summary(todo_list, ~D[2020-05-22])
 
 // example of create to-do list report
 iex> todo_list =
-		Todo.List.new([
-			%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Movie"},
-			%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Dentist"},
-			%{date: ~D[2020-05-22], start_time: ~T[11:00:00], end_time: ~T[12:00:00], title: "Shopping"},
-			%{date: ~D[2020-05-23], start_time: ~T[14:00:00], end_time: ~T[17:00:00], title: "Shopping"},
-			%{date: ~D[2020-05-25], start_time: ~T[16:00:00], end_time: ~T[19:00:00], title: "Shopping"},
-			%{date: ~D[2020-05-24], start_time: ~T[15:00:00], end_time: ~T[18:00:00], title: "Shopping"}
-		])
+	Todo.List.new([
+		%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Movie"},
+		%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Dentist"},
+		%{date: ~D[2020-05-22], start_time: ~T[11:00:00], end_time: ~T[12:00:00], title: "Shopping"},
+		%{date: ~D[2020-05-23], start_time: ~T[14:00:00], end_time: ~T[17:00:00], title: "Shopping"},
+		%{date: ~D[2020-05-25], start_time: ~T[16:00:00], end_time: ~T[19:00:00], title: "Shopping"},
+		%{date: ~D[2020-05-24], start_time: ~T[15:00:00], end_time: ~T[18:00:00], title: "Shopping"}
+	])
 
 iex> Todo.List.report_summary(todo_list)
-
  Report Summary :
 
  # Shopping     2020-05-22      11:00:00 - 12:00:00     ( 1.0 hour(s) )
