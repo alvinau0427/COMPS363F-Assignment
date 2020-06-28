@@ -28,19 +28,20 @@ $ mix test
 
 ### Run the program
 - The user guide is provided in `doc/report.pdf` or you can see the usage in `src/dynamic_workers/test/todo_list_test.exs`
+- Execute the program and the data need to setup by yourself
+
 ```
-// execute the program and the data need to setup by yourself
 $ iex -S mix
 
 // example of create daily report summary
-iex(1)> todo_list =
-			Todo.List.new([
+iex> todo_list =
+		Todo.List.new([
 			%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Movie"},
 			%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Dentist"},
 			%{date: ~D[2020-05-22], start_time: ~T[11:00:00], end_time: ~T[12:00:00], title: "Shopping"}
-			])
+		])
 
-iex(2)> Todo.List.daily_summary(todo_list, ~D[2020-05-22])
+iex> Todo.List.daily_summary(todo_list, ~D[2020-05-22])
 
  Daily Summary for date : 2020-05-22
 
@@ -53,17 +54,17 @@ iex(2)> Todo.List.daily_summary(todo_list, ~D[2020-05-22])
 :ok
 
 // example of create to-do list report
-iex(1)> todo_list =
-			Todo.List.new([
+iex> todo_list =
+		Todo.List.new([
 			%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Movie"},
 			%{date: ~D[2020-05-22], start_time: ~T[12:00:00], end_time: ~T[13:00:00], title: "Dentist"},
 			%{date: ~D[2020-05-22], start_time: ~T[11:00:00], end_time: ~T[12:00:00], title: "Shopping"},
 			%{date: ~D[2020-05-23], start_time: ~T[14:00:00], end_time: ~T[17:00:00], title: "Shopping"},
 			%{date: ~D[2020-05-25], start_time: ~T[16:00:00], end_time: ~T[19:00:00], title: "Shopping"},
 			%{date: ~D[2020-05-24], start_time: ~T[15:00:00], end_time: ~T[18:00:00], title: "Shopping"}
-			])
+		])
 
-iex(2)> Todo.List.report_summary(todo_list)
+iex> Todo.List.report_summary(todo_list)
 
  Report Summary :
 
@@ -87,20 +88,20 @@ iex> Todo.List.update_entry(2, &Map.put(&1, :title, "Updated shopping"))
 iex> Todo.List.delete_entry(2)
 
 // exmaple of count entries
-iex(1)> Todo.List.count_entries(todo_list)
-iex(2)> Todo.List.count_entries(todo_list, ~D[2020-05-22])
+iex> Todo.List.count_entries(todo_list)
+iex> Todo.List.count_entries(todo_list, ~D[2020-05-22])
 
 // example of entries
-iex(1)> Todo.List.entries(todo_list)
-iex(2)> Todo.List.entries_title("Movies")
-iex(3)> Todo.List.entries_date(~D[2020-05-22])
-iex(4)> Todo.List.entries_time(~T[13:00:00])
-iex(5)> Todo.List.entries_dateTime(~D[2020-05-23], ~T[13:00:00])
+iex> Todo.List.entries(todo_list)
+iex> Todo.List.entries_title("Movies")
+iex> Todo.List.entries_date(~D[2020-05-22])
+iex> Todo.List.entries_time(~T[13:00:00])
+iex> Todo.List.entries_dateTime(~D[2020-05-23], ~T[13:00:00])
 
 // example of track time
-iex(1)> Todo.List.track_time(todo_list, ~D[2020-05-30], "Shopping")
-iex(2)>	Todo.List.track_time(todo_list, ~D[2020-05-22])
-iex(3)> Todo.List.track_timeForTitle(todo_list, "Shopping")
+iex> Todo.List.track_time(todo_list, ~D[2020-05-30], "Shopping")
+iex> Todo.List.track_time(todo_list, ~D[2020-05-22])
+iex> Todo.List.track_timeForTitle(todo_list, "Shopping")
 ```
 
 ## Screenshots
