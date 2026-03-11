@@ -1,32 +1,40 @@
 # COMPS363F-Assignment
-> OUHK 2019/20 Distributed Systems and Parallel Computing (COMPS363F) Assignment
+> **OUHK 2019/20 Distributed Systems and Parallel Computing (COMPS363F) Assignment**
+>
+> A high-concurrency schedule management server built with **Elixir** and **OTP**, leveraging dynamic workers to handle schedule persistence, report generation, and time-tracking logic.
 
-> Elixir Program: Schedule Database Server
+[![Elixir](https://img.shields.io/badge/Elixir-%234B275F.svg?&logo=elixir&logoColor=white)](#) &nbsp;
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) &nbsp;
 
-[![Build Status](https://travis-ci.com/alvinau0427/COMPS363F-Assignment.svg?branch=master)](https://travis-ci.org/alvinau0427/COMPS363F-Assignment)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+The system is architected to demonstrate core distributed computing principles:
+* **Concurrency & Scalability:** Utilizes Elixir's lightweight processes to manage multiple schedules simultaneously.
+* **Fault Tolerance:** Implements supervisor trees to ensure the database server remains resilient under failure.
+* **Automated Verification:** Comprehensive test suite covering process lifecycle and data integrity.
 
-## Getting Started
-- Function including `Create a report summary (daily or weekly)`, `Add time in addition to date`, `Track time spenty as well as planning`.
-- Efficiency or Capacity
-- Fault Tolerance
-- Automated Testing
+## Key Features
+* **Advanced Reporting:** Generate granular daily or weekly summary reports with event counters.
+* **Precise Scheduling:** Support for date-time mapping, enabling planning down to the second.
+* **Analytical Time Tracking:** Calculate actual time spent versus planned durations.
+* **Dynamic Entry Management:** Full CRUD operations (Create, Read, Update, Delete) for schedule entries.
+* **Multi-Dimensional Querying:** Filter and search entries by title, date, time, or specific date-time combinations.
 
-## Installation
+## Installation & Testing
 
-### Setup
-- Program source code: `src/dynamic_workers/lib/todo`
-- Automated testing code: `src/dynamic_workers/test`
-
+### Compilation
+Navigate to the project root and compile the Mix project:
 ```
-$ cd ../src/dynamic_workers
-$ mix compile
-
-// for the automated testing with different test case in ../dynamic_workers/tests
-$ mix test
+cd src/dynamic_workers
+mix compile
 ```
 
-### Run the program
+### Automated Testing
+Execute the test suite to verify fault tolerance and logic:
+```
+mix test
+```
+
+### Usage Guide
+Launch the interactive Elixir shell (IEx) with the project modules loaded:
 - The user guide is provided in `doc/report.pdf` or you can see the usage in `src/dynamic_workers/test/todo_list_test.exs`
 - Execute the program and the data need to setup by yourself
 
